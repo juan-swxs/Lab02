@@ -7,7 +7,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class Main{
+public class Main {
 
     public static JFrame frame;
     public static JButton[] boton;
@@ -15,7 +15,7 @@ public class Main{
     public static void main(String[] args) {
         String titulo = "Lab02: Algortimos de ordenamiento.";
 
-        String opciones[] = {"Ejercicio de Estadistica", "Ejercicio (Sustitucion, invesrion) de Strings"};
+        String opciones[] = { "Ejercicio de Estadistica", "Ejercicio (Sustitucion, invesrion) de Strings" };
 
         final int nump = opciones.length;
 
@@ -25,16 +25,16 @@ public class Main{
         frame.setLayout(new BorderLayout());
 
         JPanel Panelbuttons = new JPanel();
-        Panelbuttons.setLayout(new GridLayout(nump,1));
+        Panelbuttons.setLayout(new GridLayout(nump, 1));
 
         boton = new JButton[nump];
 
-        for(int n = 0; n < nump; n++){
+        for (int n = 0; n < nump; n++) {
             final int index = n;
             boton[n] = new JButton(opciones[n]);
             boton[n].setBackground(Color.lightGray);
             boton[n].setForeground(Color.WHITE);
-            boton[n].addActionListener(new ActionListener(){
+            boton[n].addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     switch (index) {
@@ -44,6 +44,8 @@ public class Main{
                             System.out.println(op);
                             break;
                         case 1:
+                            OperacionesStrings isOper = new OperacionesStrings();
+                            System.out.println(isOper);
                             break;
                     }
                 }

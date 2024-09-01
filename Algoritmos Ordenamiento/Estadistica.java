@@ -25,7 +25,7 @@ public class Estadistica {
         System.out.println("\tVarianza: " + df.format(variance));
         System.out.println("\tDesviacion: " + df.format(calcularDesviacion()));
         calcularModa();
-        System.out.println("\t-------------------------------\n");
+        System.out.println("\t-------------------------------");
 
         entrada.close();
     }

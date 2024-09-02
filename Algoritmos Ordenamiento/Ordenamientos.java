@@ -3,7 +3,7 @@ import java.util.Random;
 
 public class Ordenamientos {
 
-    int[] temps = {100, 500, 1000, 5000, 10000};
+    private int[] temps = {100, 500, 1000, 5000, 10000};
 
     public Ordenamientos() {
         Scanner entrada = new Scanner(System.in);
@@ -28,7 +28,7 @@ public class Ordenamientos {
                         FunctionSort.bubbleSort(array);
                         long endTime = System.nanoTime();
                         long duration = (endTime - startTime); 
-                        System.out.println("Burbuja (Tamaño " + size + "): " + duration + " ms");
+                        System.out.println("Burbuja (Tamaño " + size + "): " + duration + " ns");
                     }
                     break;
                 case 2:
@@ -38,7 +38,7 @@ public class Ordenamientos {
                         FunctionSort.insertioSort(array);
                         long endTime = System.nanoTime();
                         long duration = (endTime - startTime);
-                        System.out.println("Inserción (Tamaño " + size + "): " + duration + " ms");
+                        System.out.println("Inserción (Tamaño " + size + "): " + duration + " ns");
                     }
                     break;
                 case 3:
@@ -48,7 +48,7 @@ public class Ordenamientos {
                         FunctionSort.selectionSort(array);
                         long endTime = System.nanoTime();
                         long duration = (endTime - startTime);
-                        System.out.println("Selección (Tamaño " + size + "): " + duration + " ms");
+                        System.out.println("Selección (Tamaño " + size + "): " + duration + " ns");
                     }
                     break;
                 case 4:
@@ -58,7 +58,7 @@ public class Ordenamientos {
                         FunctionSort.mergeSort(array);
                         long endTime = System.nanoTime();
                         long duration = (endTime - startTime);
-                        System.out.println("MergeSort (Tamaño " + size + "): " + duration + " ms");
+                        System.out.println("MergeSort (Tamaño " + size + "): " + duration + " ns");
                     }
                     break;
                 case 5:
@@ -74,6 +74,7 @@ public class Ordenamientos {
 
         } while (opcion != 6);
 
+        System.out.println();
         entrada.close();
     }
 
@@ -87,6 +88,41 @@ public class Ordenamientos {
     }
 
     private void generateComparativeTable() {
-        
+        System.out.printf("%10s %16s %16s %16s %16s\n","Tamaño", "Burbuja (ns)", "Inserción (ns)", "Selección (ns)", "MergeSort (ns)");
+        for (int size : temps) {
+            Double[] array;
+            long startTime, endTime, durationBubble, durationInsertion, durationSelection, durationMergeSort;
+
+            array = generateRandoms(size);
+            startTime = System.nanoTime();
+            FunctionSort.bubbleSort(array);
+            endTime = System.nanoTime();
+            durationBubble = (endTime - startTime);
+
+            array = generateRandoms(size);
+            startTime = System.nanoTime();
+            FunctionSort.insertioSort(array);
+            endTime = System.nanoTime();
+            durationInsertion = (endTime - startTime);
+
+            array = generateRandoms(size);
+            startTime = System.nanoTime();
+            FunctionSort.selectionSort(array);
+            endTime = System.nanoTime();
+            durationSelection = (endTime - startTime);
+
+            array = generateRandoms(size);
+            startTime = System.nanoTime();
+            FunctionSort.mergeSort(array);
+            endTime = System.nanoTime();
+            durationMergeSort = (endTime - startTime);
+
+            System.out.printf("%10d %14d %14d %14d %14d\n", size, durationBubble, durationInsertion, durationSelection, durationMergeSort);
+ 
+        }
     }
 }
+        
+        
+    
+

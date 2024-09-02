@@ -15,7 +15,8 @@ public class Main {
     public static void main(String[] args) {
         String titulo = "Lab02: Algortimos de ordenamiento.";
 
-        String opciones[] = { "Ejercicio de Estadistica", "Ejercicio (Sustitucion, invesrion) de Strings" };
+        String opciones[] = { "Ejercicio de Estadistica", "Ejercicio (Sustitucion, invesrion) de Strings",
+        "Metodos de ordenamiento"};
 
         final int nump = opciones.length;
 
@@ -46,6 +47,10 @@ public class Main {
                         case 1:
                             OperacionesStrings isOper = new OperacionesStrings();
                             System.out.println(isOper);
+                            break;
+                        case 2:
+                            Ordenamientos isOrder = new Ordenamientos();
+                            System.out.println(isOrder);
                             break;
                     }
                 }

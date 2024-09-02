@@ -73,8 +73,6 @@ public class Ordenamientos {
             }
 
         } while (opcion != 6);
-
-        System.out.println();
         entrada.close();
     }
 

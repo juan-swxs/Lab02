@@ -1,4 +1,3 @@
-import java.text.DecimalFormat;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
@@ -12,18 +11,17 @@ public class Estadistica {
 
     public Estadistica() {
         Scanner entrada = new Scanner(System.in);
-        DecimalFormat df = new DecimalFormat("#.000");
         System.out.println("\t\tEjercicio 1.");
         System.out.print(" " +"Ingrese el tamaño del arreglo: ");
         size = entrada.nextInt();
         arreglo_Aleatorio();
         System.out.println("\t-------------------------------");
         media = calcularMedia();
-        System.out.println("\tMedia: " + df.format(media));
+        System.out.printf("\tMedia: %.3f%n", media);
         System.out.println("\tMediana: " + calcularMediana());
         variance = calcularVarianza();
-        System.out.println("\tVarianza: " + df.format(variance));
-        System.out.println("\tDesviacion: " + df.format(calcularDesviacion()));
+        System.out.printf("\tVarianza: %.3f%n", variance);
+        System.out.printf("\tDesviacion: %.3f%n", calcularDesviacion());
         calcularModa();
         System.out.println("\t-------------------------------");
 

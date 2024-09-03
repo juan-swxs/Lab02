@@ -11,20 +11,34 @@ public class AtributosCarro {
         this.kilometraje = kilometraje;
     }
 
-    public String getmarca(){
+    public String getMarca(){
         return marca;
     }
 
-    public String getmodelo(){
+    public String getModelo(){
         return modelo;
     }
 
-    public String getcolor(){
+    public String getColor(){
         return color;
     }
 
-    public int getkilometraje(){
+    public int getKilometraje(){
         return kilometraje;
+    }
+
+    @Override
+    public String toString() {
+        return String.format(
+            "==================\n" +
+            "Marca : %s\n" +
+            "Modelo : %s\n" +
+            "Color : %s\n" +
+            "Kilometraje : %d km\n" +
+            "==================",
+            marca, modelo, color, kilometraje
+        );
+        
     }
     
 }
